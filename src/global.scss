@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: linear-gradient(180deg, #f4f7ff 0%, #eef5ff 100%);
+  color: #0f172a;
+  min-height: 100vh;
+}
+
+.app-shell {
+  max-width: 1200px;
+  margin: 28px auto;
+  padding: 18px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  padding: 12px 18px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(11, 22, 60, 0.06);
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #0b61d8;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 20px;
+  align-items: start;
+}
+
+/* left column takes remaining width */
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* right column sticky panel */
+.right-column {
+  position: relative;
+}
+
+.sticky {
+  position: sticky;
+  top: 20px;
+}
+
+/* card base */
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 8px 24px rgba(11, 22, 60, 0.06);
+}
+
+/* upload card specifics */
+.upload-card h3 {
+  margin: 0 0 6px 0;
+  color: #0b61d8;
+}
+
+.muted {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin: 0 0 10px 0;
+}
+
+.file-input {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 2px dashed #e6eefc;
+  padding: 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.file-input input[type="file"] {
+  display: none;
+}
+
+.file-label {
+  color: #0b61d8;
+  font-weight: 600;
+}
+
+/* buttons */
+.row {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.btn {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn.primary {
+  background: #0b61d8;
+  color: white;
+}
+
+.btn.ghost {
+  background: transparent;
+  color: #0b61d8;
+  border: 1px solid #e6eefc;
+}
+
+/* alerts */
+.alert {
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.alert.error {
+  background: #ffefef;
+  color: #9b1c1c;
+  border: 1px solid #ffd6d6;
+}
+
+/* feedback card */
+.feedback-card h3 {
+  margin: 0 0 6px 0;
+  color: #0b61d8;
+}
+
+.lead {
+  font-size: 1rem;
+  color: #374151;
+  margin-top: 6px;
+}
+
+.flex-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 12px;
+
+  ul{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+/* score card */
+.score-card h3 {
+  color: #0b61d8;
+  margin: 0 0 12px 0;
+}
+
+.radar-wrap {
+  margin-top: 6px;
+}
+
+/* confidence chip */
+.confidence {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.chip {
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.chip.low {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.chip.medium {
+  background: #fff7ed;
+  color: #92400e;
+}
+
+.chip.high {
+  background: #ecfdf5;
+  color: #065f46;
+}
+
+.chip.unknown {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+/* footer */
+.footer {
+  margin-top: 20px;
+  text-align: center;
+  color: #6b7280;
+}
+
+ol{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* responsive */
+@media (max-width: 980px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .right-column {
+    order: 2;
+  }
+
+  .left-column {
+    order: 1;
+  }
+
+  .flex-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* tabs */
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.tab {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  font-weight: 600;
+  color: #0b61d8;
+}
+.tab.active {
+  background: #eaf3ff;
+  border-color: #cfe1ff;
+  box-shadow: 0 4px 10px rgba(11,22,60,0.04);
+}
+
+/* paste area */
+.paste-area {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #e6eefc;
+  padding: 12px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  resize: vertical;
+  min-height: 160px;
+  background: #fff;
+}
+
+.paste-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 6px;
+}
